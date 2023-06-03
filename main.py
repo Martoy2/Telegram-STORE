@@ -82,7 +82,7 @@ async def shop(message: types.Message):
     else:
         await message.reply(f"Вам нужно зарегестрироваться, для этого пропишите /start")
 
-
+#я как бы сделал отдельной функцией само создание платежа, но по хорошему на до бы и весь этот мусор оптимизировать и сделать функцией
 @dp.callback_query_handler()
 async def shop_kb(callback: types.CallbackQuery, state=FSMContext):
     if check_reg(callback.from_user.id) == True:
